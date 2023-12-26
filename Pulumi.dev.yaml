@@ -1,0 +1,11 @@
+config:
+  aws:region: eu-central-1
+  awsmc:image: "itzg/minecraft-server:stable"
+  awsmc:cpu: "1024"
+  awsmc:memory: "4096"
+  awsmc:useSpotInstance: "true"
+  awsmc:gameMode: "survival"
+  awsmc:difficulty: "normal"
+  awsmc:onlineMode: "false"
+  awsmc:serverName: "Pulumi Minecraft Server"
+  awsmc:modt: "Welcome to Pulumi Minecraft Server :)"
