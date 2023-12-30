@@ -123,6 +123,10 @@ You can define all the different server properties that `McEcsOptions` exposes:
 Most of the files can be edited by using the values described above. To fiddle around with the file system the package automatically creates [S3 Datasync](https://aws.amazon.com/datasync/?nc1=h_ls) tasks and an S3 Bucket to shift data around.
 Go to S3 DataSync and use the corresponding tasks to copy data from the EFS file system to the S3 bucket and vice versa.
 
+## RCON Usage
+
+You can use RCON on port 25575, a password is automatically created during creation. You can find it in the environment variables of the task definition (I'm too lazy to implement AWS Secrets Manager for this right now, feel free to do so).
+
 # Architecture
 
 ## Contributing
