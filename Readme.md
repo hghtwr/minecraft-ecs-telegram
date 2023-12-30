@@ -1,6 +1,6 @@
 This project allows you to run as many Minecraft server instances on [AWS ECS Fargate](https://docs.aws.amazon.com/ecs/) (Elastic Container Service) as you like. You can interact with these instances using a [Telegram Chat Bot](https://telegram.org/) hosted serverless on [AWS Lambda](https://aws.amazon.com/lambda/) to start and stop your Minecraft server.
 
-Using [IaC](Infrastructure-as-code) by [Pulumi](https://pulumi.com) all you need is to run 1 command from your command line and everything is created automatically. Same goes for removal of the resources: You can remove everything by one simple command after you are done with your server.
+Using IaC (Infrastructure-as-code) by [Pulumi](https://pulumi.com) all you need is to run 1 command from your command line and everything is created automatically. Same goes for removal of the resources: You can remove everything by one simple command after you are done with your server.
 
 🔥 Run as many Minecraft server instances with individual configuration as you can afford
 
