@@ -3,9 +3,13 @@ This project allows you to run as many Minecraft server instances on [AWS ECS Fa
 Using [IaC](Infrastructure-as-code) by [Pulumi](https://pulumi.com) all you need is to run 1 command from your command line and everything is created automatically. Same goes for removal of the resources: You can remove everything by one simple command after you are done with your server.
 
 🔥 Run as many Minecraft server instances with individual configuration as you can afford
+
 ☁️ Hosted on AWS
+
 🤖 Start and stop your servers using a serverless Telegram Chat Bot
+
 📂 Use S3 Datasync to interact with files in your server instance.
+
 💰 Optionally: Use Fargate Spot instances to save up to 70% compared to regular ECS Fargate Deployment.
 
 ## Table of Contents
