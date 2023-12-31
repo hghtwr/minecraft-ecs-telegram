@@ -16,8 +16,8 @@ Using IaC (Infrastructure-as-code) by [Pulumi](https://pulumi.com) all you need 
 
 - [Prerequisites](#prerequisites)
 - [Quickstart](#quickstart)
-- [Architecture](#architecture)
 - [Configuration](#configuration)
+- [Architecture](#architecture)
 
 # Prerequisites
 
