@@ -13,7 +13,7 @@ const mcEcsOptions: McEcsOptions = {
   memory: config.getNumber("memory"),
   useSpotInstance: config.requireBoolean("useSpotInstance"),
   serverProperties: {
-    MODT: config.get("modt"),
+    MODT: config.get("modt") || undefined,
     DIFFICULTY: config.require("difficulty") || undefined,
     GAME_MODE: config.get("gameMode") || undefined,
     ONLINE_MODE: config.get("onlineMode"),
