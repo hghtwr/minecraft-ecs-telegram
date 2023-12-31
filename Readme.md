@@ -83,8 +83,8 @@ You have to use the prefix `awsmc` for the configuration keys.
 config:
   aws:region: eu-central-1 ## Use region of your choice -- Decide based on costs and latency :)
   awsmc:deploymentId: "mc-ecs-dev" ## THIS MUST BE UNIQUE IN YOUR ACCOUNT!
-  awsmc:image: "itzg/minecraft-server:stable"
-  awsmc:cpu: "1024"
+  awsmc:image: "itzg/minecraft-server:stable" ## Check the docker image doc's for more info on this: https://github.com/itzg/docker-minecraft-server
+  awsmc:cpu: "1024" ## See here for supported combinations of cpu and memory on Fargate: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-cpu-memory-error.html
   awsmc:memory: "4096"
   awsmc:useSpotInstance: "true"
   awsmc:gameMode: "survival"
