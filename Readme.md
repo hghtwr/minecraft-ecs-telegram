@@ -114,7 +114,7 @@ config:
 | maxBuildHeight             | Maximum height in blocks that can be built in the Minecraft world                                 |
 | spawnAnimals               | Determines if animals spawn in the Minecraft world (true/false)                                   |
 | spawnMonsters              | Determines if monsters spawn in the Minecraft world (true/false)                                  |
-| spawnNPCs                  | Determines if NPCs (Non-Player Characters) spawn in the Minecraft world (true/false)              |
+| spawnNpcs                  | Determines if NPCs (Non-Player Characters) spawn in the Minecraft world (true/false)              |
 | viewDistance               | Maximum number of chunks that clients can see from the server (higher values require more memory) |
 | levelSeed                  | Seed used to generate the Minecraft world                                                         |
 | pvp                        | Determines if player versus player combat is allowed (true/false)                                 |
