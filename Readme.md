@@ -73,43 +73,58 @@ Now you can start and stop your Minecraft server instances using the Telegram Ch
 Customization of your servers is possible using the stack files in the repository (Pulumi.<env>.yaml).
 You need to provide a unique `awsmc:deploymentId` for each stack.
 
-Configuration values are read from the stack file (`Pulumi.<env>.yaml`) in the `index.ts`.
-They they are assigned to `McEcsOptions`.
-You can define all the different server properties that `McEcsOptions` exposes:
+Configuration values are read from the stack file (`Pulumi.<env>.yaml`) in the `index.ts` file.
+You have to use the prefix `awsmc` for the configuration keys.
 
-```ts
-    MODT?: string;
-    DIFFICULTY?: string;
-    GAME_MODE?: string;
-    ONLINE_MODE?: string;
-    SERVER_NAME?: string;
-    MAX_PLAYERS?: string;
-    VERSION?: string;
-    RCON?: string;
-    ICON?: string;
-    MAX_WORLD_SIZE?: string;
-    ALLOW_NETHER?: string;
-    ANNOUNCE_PLAYER_ACHIEVEMENTS?: string;
-    ENABLE_COMMAND_BLOCK?: string;
-    FORCE_GAMEMODE?: string;
-    GENERATE_STRUCTURES?: string;
-    SNOOPER_ENABLED?: string;
-    MAX_BUILD_HEIGHT?: string;
-    SPAWN_ANIMALS?: string;
-    SPAWN_MONSTERS?: string;
-    SPAWN_NPCS?: string;
-    VIEW_DISTANCE?: string;
-    LEVEL_SEED?: string;
-    PVP?: string;
-    LEVEL_TYPE?: string;
-    RESOURCE_PACK?: string;
-    RESOURCE_PACK_SHA1?: string;
-    RESOURCE_PACK_ENFORCE?: string;
-    LEVEL?: string;
-    ALLOW_FLIGHT?: string;
-    CUSTOM_SERVER_PROPERTIES?: string;
-
+```yaml
+config:
+  aws:region: eu-central-1
+  awsmc:deploymentId: "mc-ecs-dev"
+  awsmc:image: "itzg/minecraft-server:stable"
+  awsmc:cpu: "1024"
+  awsmc:memory: "4096"
+  awsmc:useSpotInstance: "true"
+  awsmc:gameMode: "survival"
+  awsmc:difficulty: "normal"
+  awsmc:onlineMode: "false"
+  awsmc:serverName: "Pulumi Minecraft Server"
+  awsmc:modt: "Welcome to Pulumi Minecraft Server :)"
+  awsmc:version: "1.20.2"
+  [...] ## add more from the list below
 ```
+
+| Attribute                  | Explanation                                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------------------------- |
+| modt                       | Message of the Day (MOTD) displayed in the Minecraft server list                                  |
+| difficulty                 | Difficulty level of the Minecraft server (e.g., "peaceful", "easy", "normal", "hard")             |
+| gameMode                   | Game mode of the Minecraft server (e.g., "survival", "creative", "adventure", "spectator")        |
+| onlineMode                 | Determines if the Minecraft server checks player usernames with Mojang's servers (true/false)     |
+| serverName                 | Name of the Minecraft server                                                                      |
+| maxPlayers                 | Maximum number of players allowed on the Minecraft server                                         |
+| version                    | Version of Minecraft server to use                                                                |
+| rcon                       | Remote Console (RCON) password for managing the Minecraft server                                  |
+| icon                       | Path to the server icon displayed in the Minecraft server list                                    |
+| maxWorldSize               | Maximum size of the Minecraft world in blocks                                                     |
+| allowNether                | Determines if the Nether dimension is enabled (true/false)                                        |
+| announcePlayerAchievements | Determines if player achievements are announced in chat (true/false)                              |
+| enableCommandBlock         | Determines if command blocks are enabled (true/false)                                             |
+| forceGameMode              | Determines if players are forced into the server's game mode (true/false)                         |
+| generateStructures         | Determines if structures (e.g., villages, dungeons) are generated in the Minecraft world          |
+| snooperEnabled             | Determines if server data is sent to Mojang for statistics (true/false)                           |
+| maxBuildHeight             | Maximum height in blocks that can be built in the Minecraft world                                 |
+| spawnAnimals               | Determines if animals spawn in the Minecraft world (true/false)                                   |
+| spawnMonsters              | Determines if monsters spawn in the Minecraft world (true/false)                                  |
+| spawnNPCs                  | Determines if NPCs (Non-Player Characters) spawn in the Minecraft world (true/false)              |
+| viewDistance               | Maximum number of chunks that clients can see from the server (higher values require more memory) |
+| levelSeed                  | Seed used to generate the Minecraft world                                                         |
+| pvp                        | Determines if player versus player combat is allowed (true/false)                                 |
+| levelType                  | Type of Minecraft world to generate (e.g., "default", "flat", "largeBiomes")                      |
+| resourcePack               | URL or file path to a resource pack to use in the Minecraft server                                |
+| resourcePackSHA1           | SHA-1 hash of the resource pack file for verification                                             |
+| resourcePackEnforce        | Determines if the resource pack is enforced for all players (true/false)                          |
+| level                      | Name of the Minecraft world to load                                                               |
+| allowFlight                | Determines if players can fly in the Minecraft world (true/false)                                 |
+| customServerProperties     | Additional custom server properties                                                               |
 
 ## Example: Create a new instance
 
