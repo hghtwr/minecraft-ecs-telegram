@@ -156,7 +156,3 @@ Feel free to open issues and PR's :)
 ## Acknowledgements
 
 Big shoutout to [Minecraft Docker](https://github.com/itzg/docker-minecraft-server)
-
-## Contact
-
-Provide contact information for support or inquiries.
