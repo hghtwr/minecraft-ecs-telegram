@@ -81,8 +81,8 @@ You have to use the prefix `awsmc` for the configuration keys.
 
 ```yaml
 config:
-  aws:region: eu-central-1
-  awsmc:deploymentId: "mc-ecs-dev"
+  aws:region: eu-central-1 ## Use region of your choice -- Decide based on costs and latency :)
+  awsmc:deploymentId: "mc-ecs-dev" ## THIS MUST BE UNIQUE IN YOUR ACCOUNT!
   awsmc:image: "itzg/minecraft-server:stable"
   awsmc:cpu: "1024"
   awsmc:memory: "4096"
