@@ -129,6 +129,8 @@ You can use RCON on port 25575, a password is automatically created during creat
 
 # Architecture
 
+![Architecture Diagram](./docs/infrastructure_diagram.drawio.png)
+
 ## Contributing
 
 Feel free to open issues and PR's :)
