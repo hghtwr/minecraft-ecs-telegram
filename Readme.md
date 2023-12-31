@@ -76,6 +76,9 @@ You need to provide a unique `awsmc:deploymentId` for each stack.
 Configuration values are read from the stack file (`Pulumi.<env>.yaml`) in the `index.ts` file.
 You have to use the prefix `awsmc` for the configuration keys.
 
+> [!IMPORTANT]
+> You dont necessesarily have to set any values. All of them default to reasonable values.
+
 ```yaml
 config:
   aws:region: eu-central-1
