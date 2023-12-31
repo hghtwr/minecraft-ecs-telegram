@@ -3,6 +3,7 @@ import * as aws from "@pulumi/aws";
 import * as awsx from "@pulumi/awsx";
 import { McEcsOptions, McEcs } from "./ecs";
 import { McLambda, LambdaOptions } from "./lambda";
+import { local } from "@pulumi/command";
 const config = new pulumi.Config();
 
 const appName = config.require("deploymentId"); // This must be unique in your AWS account
@@ -56,5 +57,9 @@ const mcTelegramBotOptions: LambdaOptions = {
 
 const mcTelegramBot = new McLambda(appName, mcTelegramBotOptions, {dependsOn: [mcEcs]});
 
-pulumi.log.info("Use the telegram API to register the function URL as webhook");
-export const functionUrl = mcTelegramBot.commandHandlerFunctionUrl.functionUrl;
+const telegramWebhook = new local.Command("telegram-webhook", {
+  triggers: [mcTelegramBot.commandHandlerFunctionUrl.functionUrl],
+create: pulumi.interpolate `curl --data \"url=${mcTelegramBot.commandHandlerFunctionUrl.functionUrl}\" https://api.telegram.org/bot${process.env.TELEGRAM_API_TOKEN}/setWebhook`
+});
+
+export const webhookResult =  telegramWebhook.stdout;

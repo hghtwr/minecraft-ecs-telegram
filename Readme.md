@@ -26,7 +26,7 @@ Using IaC (Infrastructure-as-code) by [Pulumi](https://pulumi.com) all you need 
 3. You have installed [Pulumi](https://pulumi.com) on your machine.
 4. You have cloned this git repository to your machine.
 5. You have
-   - [created a Telegram Bot](https://core.telegram.org/bots/tutorial) and saved it's **Bot Token**.
+   - [created a Telegram Bot](https://core.telegram.org/bots/tutorial) and copied it's **Bot Token**.
    - Added this bot to a Telegram Group and extracted the chat id using [GetUpdates](https://core.telegram.org/bots/api#getupdates) on the Telegram API
 
 # Quickstart
@@ -59,8 +59,20 @@ npm install
 pulumi up
 ```
 
-After Pulumi is done with deployment, it will output the function Url of your Lambda Command Handler.
-Set this as a [Webhook](https://core.telegram.org/bots/api#setwebhook) in Telegram
+After Pulumi is done with deployment, it automatically try to set the corresponding webhook of your Telegram bot.
+
+The output should look something like this:
+
+```sh
+Outputs:
+  + webhookResult: (json) {
+      + description: "Webhook is set"
+      + ok         : true
+      + result     : true
+    }
+
+
+```
 
 Now you can start and stop your Minecraft server instances using the Telegram Chat Bot hosted on AWS Lambda:
 
