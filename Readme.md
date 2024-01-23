@@ -10,7 +10,8 @@ Using IaC (Infrastructure-as-code) by [Pulumi](https://pulumi.com) all you need 
 
 📂 Use S3 Datasync to interact with files in your server instance.
 
-💰 Optionally: Use Fargate Spot instances to save up to 70% compared to regular ECS Fargate Deployment.
+💰 Optionally: Use Fargate Spot instances to save up to 70% compared to regular ECS Fargate Deployment. In fact, an involuntarely conducted test showed me that a spot server costs about 0,63$ per day (1 vCPU | 8 GB) and was not interrupted once during 7 days.
+
 
 ## Table of Contents
 
