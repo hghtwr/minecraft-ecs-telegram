@@ -15,10 +15,15 @@ Using IaC (Infrastructure-as-code) by [Pulumi](https://pulumi.com) all you need 
 
 ## Table of Contents
 
+- [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
 - [Quickstart](#quickstart)
 - [Configuration](#configuration)
-- [Architecture](#architecture)
+
+# Architecture
+
+![Architecture Diagram](./docs/infrastructure_diagram.drawio.png)
+
 
 # Prerequisites
 
@@ -158,9 +163,6 @@ Go to S3 DataSync and use the corresponding tasks to copy data from the EFS file
 
 You can use RCON on port 25575, a password is automatically created during creation. You can find it in the environment variables of the task definition (I'm too lazy to implement AWS Secrets Manager for this right now, feel free to do so).
 
-# Architecture
-
-![Architecture Diagram](./docs/infrastructure_diagram.drawio.png)
 
 ## Contributing
 
