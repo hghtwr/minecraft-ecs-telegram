@@ -3,7 +3,7 @@ config:
   awsmc:deploymentId: "mc-ecs-dev"
   awsmc:image: "itzg/minecraft-server:stable"
   awsmc:cpu: "1024"
-  awsmc:memory: "4096"
+  awsmc:memory: "8192"
   awsmc:useSpotInstance: "true"
   awsmc:gameMode: "survival"
   awsmc:difficulty: "normal"
