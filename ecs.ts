@@ -264,7 +264,16 @@ class McEcs extends pulumi.ComponentResource {
                 },
                 {
                   name: "MEMORY",
-                  value: `${this.mcEcsOptions.memory}M`
+                  //value: `${this.mcEcsOptions.memory}M`
+                  value: '' // let it be calculated by the container
+                },
+                {
+                  name: "JVM_XX_OPTS",
+                  value: "-XX:MaxRAMPercentage=75"
+                },
+                {
+                  name: "USE_AIKAR_FLAGS",
+                  value: "true"
                 },
                 {
                   name: "RCON_PASSWORD",

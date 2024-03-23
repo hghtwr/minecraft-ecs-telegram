@@ -70,8 +70,6 @@ Outputs:
       + ok         : true
       + result     : true
     }
-
-
 ```
 
 Now you can start and stop your Minecraft server instances using the Telegram Chat Bot hosted on AWS Lambda:

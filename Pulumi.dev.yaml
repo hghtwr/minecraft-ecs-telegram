@@ -2,8 +2,8 @@ config:
   aws:region: eu-central-1
   awsmc:deploymentId: "mc-ecs-dev"
   awsmc:image: "itzg/minecraft-server:stable"
-  awsmc:cpu: "1024"
-  awsmc:memory: "4096"
+  awsmc:cpu: "2048"
+  awsmc:memory: "16384"
   awsmc:useSpotInstance: "true"
   awsmc:gameMode: "survival"
   awsmc:difficulty: "normal"
@@ -11,3 +11,4 @@ config:
   awsmc:serverName: "Pulumi Minecraft Server"
   awsmc:modt: "Welcome to Pulumi Minecraft Server :)"
   awsmc:version: "1.20.2"
+  awsmc:viewDistance: "32"
